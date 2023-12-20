@@ -10,12 +10,14 @@ fun main() {
     // 큰 수 순서대로 정렬
     val sortedCoins = coins.sortedDescending()
     
-    // 결과 : 동전 개수
+    // coinCnt : 결과, 동전 개수
     var coinCnt = 0
     var remain = k
     for (coin in sortedCoins) {
-        coinCnt += remain / coin
-        remain %= coin
+        if (remain >= coin) {
+            coinCnt += remain / coin
+            remain %= coin
+        }
     }
     
     println(coinCnt)
