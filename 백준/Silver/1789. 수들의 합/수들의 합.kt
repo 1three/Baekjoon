@@ -9,7 +9,7 @@ fun main() {
     // n * (n+1) / 2 <= s인 n
     
     val standard = s * 2
-    var n = Math.floor(Math.sqrt(standard.toDouble())).toLong()
+    var n = Math.sqrt(standard.toDouble()).toLong()
     
     while (true) {
         val multiply = n * (n + 1)
