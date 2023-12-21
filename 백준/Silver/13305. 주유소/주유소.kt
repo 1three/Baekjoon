@@ -1,28 +1,16 @@
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.util.StringTokenizer
-import java.io.StringReader
-
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))    
     
-    val n = br.readLine().toInt()
+    val n = br.readLine().toLong()
     
-   	val roadLengths = IntArray(n - 1)
-    val roadTokens = StringTokenizer(br.readLine())
-    for (i in 0 until n - 1) {
-        roadLengths[i] = roadTokens.nextToken().toInt()
-    }
-
-    val gasPrices = IntArray(n)
-    val gasTokens = StringTokenizer(br.readLine())
-    for (i in 0 until n) {
-        gasPrices[i] = gasTokens.nextToken().toInt()
-    }
+    val roadLengths = br.readLine().split(" ").map { it.toLong() }.toLongArray()
+    val gasPrices = br.readLine().split(" ").map { it.toLong() }.toLongArray()
     
     // result : 결과 담는 변수
-    var result = 0
+    var result = 0L
     
     val cityNumber = gasPrices.size
     
@@ -44,7 +32,7 @@ fun main() {
         }
         
         // 거리 (minCity까지의 거리)
-        var distance = 0
+        var distance = 0L
         
         if (minCity == i) {
             // 내 도시의 기름이 가장 저렴한 경우
@@ -64,8 +52,6 @@ fun main() {
             continue
         }
     }
-    
-    println(result)
     
     br.close()
 }
