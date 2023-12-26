@@ -1,6 +1,8 @@
 fun main() = System.`in`.bufferedReader().use { br ->
+    val result = StringBuffer()
     while (true) {
         val string = br.readLine() ?: break
-        println(string)
+        result.append(string).append("\n")
     }
+    print(result.toString())
 }
