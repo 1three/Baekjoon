@@ -1,10 +1,3 @@
-package com.three.baekjoon
-
-data class Person (
-    val weight: Int,
-    val height: Int
-)
-
 fun main() = System.`in`.bufferedReader().use { br ->
     var word = br.readLine()
     val croatiaArray = arrayOf("c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=")
