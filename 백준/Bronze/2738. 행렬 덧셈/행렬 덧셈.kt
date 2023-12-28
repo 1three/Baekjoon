@@ -1,6 +1,6 @@
 fun main() = System.`in`.bufferedReader().use { br ->
     val (n, m) = br.readLine().split(" ").map { it.toInt() }
-
+    val result = StringBuilder()
     val array = Array(n) { IntArray(m) }
     for (i in 0 until n) {
         array[i] = br.readLine().split(" ").map { it.toInt() }.toIntArray()
@@ -14,6 +14,7 @@ fun main() = System.`in`.bufferedReader().use { br ->
     }
 
     array.forEach { row ->
-        println(row.joinToString(" "))
+        result.append(row.joinToString(" ")).append("\n")
     }
+    println(result)
 }
