@@ -2,13 +2,20 @@ import java.lang.StringBuilder
 
 fun main() = System.`in`.bufferedReader().use { br ->
     val t = br.readLine().toInt()
-    val result = StringBuilder(t * 4)  // 고정된 출력 길이 가정, 초기 크기 설정
+    val result = StringBuilder()
 
     repeat(t) {
         val (h, _, n) = br.readLine().split(" ").map { it.toInt() }
+        var floor = 0
+        var no = 0
 
-        val no = (n - 1) / h + 1
-        val floor = (n - 1) % h + 1
+        if (n % h == 0) {
+            floor = h
+            no = n / h
+        } else {
+            floor = n % h
+            no = n / h + 1
+        }
 
         result.append(floor * 100 + no).append("\n")
     }
