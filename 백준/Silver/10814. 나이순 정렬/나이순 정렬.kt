@@ -1,7 +1,7 @@
 fun main() = System.`in`.bufferedReader().use { br ->
     val n = br.readLine().toInt()
     val array = Array(201) { StringBuilder() }
-    val result = java.lang.StringBuilder()
+    val result = StringBuilder()
 
     repeat(n) {
         val string = br.readLine()
