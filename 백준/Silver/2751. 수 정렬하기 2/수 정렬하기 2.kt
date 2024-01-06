@@ -1,18 +1,19 @@
 import java.lang.StringBuilder
-import java.util.PriorityQueue
 
 fun main() = System.`in`.bufferedReader().use { br ->
     val n = br.readLine().toInt()
-    val pq = PriorityQueue<Int>()
+    val list = BooleanArray(2_000_001)
     val result = StringBuilder()
 
     repeat(n) {
         val m = br.readLine().toInt()
-        pq.add(m)
+        list[m + 1_000_000] = true
     }
 
-    while (pq.isNotEmpty()) {
-        result.append(pq.poll()).append("\n")
+    for (i in list.indices) {
+        if (list[i]) {
+            result.append(i-1_000_000).append("\n")
+        }
     }
 
     println(result)
