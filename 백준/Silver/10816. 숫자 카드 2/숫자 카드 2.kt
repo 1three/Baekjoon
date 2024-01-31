@@ -1,23 +1,24 @@
 import java.lang.StringBuilder
+import java.util.StringTokenizer
 
 fun main() = System.`in`.bufferedReader().use { br ->
     val n = br.readLine().toInt()
-    val cards = br.readLine().split(" ").map { it.toInt() }
+    val cards = StringTokenizer(br.readLine())
     val m = br.readLine().toInt()
-    val numbers = br.readLine().split(" ").map { it.toInt() }
+    val numbers = StringTokenizer(br.readLine())
 
     val map = HashMap<Int, Int>()
     val result = StringBuilder()
 
-    for (i in 0 until n) {
-        val key = cards[i]
+    repeat(n) {
+        val key = cards.nextToken().toInt()
         map[key] = map.getOrDefault(key, 0) + 1
     }
 
-    for (j in 0 until m) {
-        val key = numbers[j]
+    repeat(m) {
+        val key = numbers.nextToken().toInt()
         val count = map.getOrDefault(key, 0)
-        result.append(count).append(" ")
+        result.append("$count ")
     }
 
     println(result)
