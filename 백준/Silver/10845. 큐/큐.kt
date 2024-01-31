@@ -17,7 +17,7 @@ fun main() = System.`in`.bufferedReader().use { br ->
             }
 
             "pop" -> {
-                val number = if (queue.isEmpty()) -1 else queue.remove()
+                val number = if (queue.isEmpty()) -1 else queue.poll()
                 result.append("$number\n")
             }
 
