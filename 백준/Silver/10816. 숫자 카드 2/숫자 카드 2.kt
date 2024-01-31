@@ -2,7 +2,7 @@ import java.lang.StringBuilder
 
 fun main() = System.`in`.bufferedReader().use { br ->
     val n = br.readLine().toInt()
-    val cards = br.readLine().split(" ").map { it.toInt() }.sorted()
+    val cards = br.readLine().split(" ").map { it.toInt() }
     val m = br.readLine().toInt()
     val numbers = br.readLine().split(" ").map { it.toInt() }
 
