@@ -10,30 +10,11 @@ fun main() = System.`in`.bufferedReader().use { br ->
         val line = br.readLine().split(" ")
 
         when (line[0]) {
-            "push" -> {
-                val number = line[1].toInt()
-                stack.push(number)
-            }
-
-            "pop" -> {
-                val number = if (stack.isEmpty()) -1 else stack.pop()
-                result.append("$number\n")
-            }
-
-            "size" -> {
-                val size = stack.size
-                result.append("$size\n")
-            }
-
-            "empty" -> {
-                val isEmpty = if (stack.isEmpty()) 1 else 0
-                result.append("$isEmpty\n")
-            }
-
-            "top" -> {
-                val top = if (stack.isEmpty()) -1 else stack.peek()
-                result.append("$top\n")
-            }
+            "push" -> stack.push(line[1].toInt())
+            "pop" -> result.append("${if (stack.isEmpty()) -1 else stack.pop()}\n")
+            "size" -> result.append("${stack.size}\n")
+            "empty" -> result.append("${if (stack.isEmpty()) 1 else 0}\n")
+            "top" -> result.append("${if (stack.isEmpty()) -1 else stack.peek()}\n")
         }
     }
 
