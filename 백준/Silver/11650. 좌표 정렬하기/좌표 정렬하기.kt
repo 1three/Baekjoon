@@ -1,3 +1,4 @@
+import java.lang.StringBuilder
 import java.util.PriorityQueue
 
 data class Point(val x: Int, val y: Int) : Comparable<Point> {
@@ -12,7 +13,8 @@ data class Point(val x: Int, val y: Int) : Comparable<Point> {
 fun main() = System.`in`.bufferedReader().use { br ->
     val n = br.readLine().toInt()
     val pq = PriorityQueue<Point>()
-
+    val result = StringBuilder()
+    
     repeat(n) {
         val (x, y) = br.readLine().split(" ").map { it.toInt() }
         pq.offer(Point(x, y))
@@ -20,6 +22,8 @@ fun main() = System.`in`.bufferedReader().use { br ->
 
     while (pq.isNotEmpty()) {
         val point = pq.poll()
-        println("${point.x} ${point.y}")
+        result.append("${point.x} ${point.y}\n")
     }
+    
+    println(result)
 }
